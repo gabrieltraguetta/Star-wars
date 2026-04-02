@@ -1,180 +1,86 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Wars UI</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Ícones -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Fonte estilo sci-fi -->
+    <title>Star Wars Universe</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            background: radial-gradient(circle, #000000, #020617, #000000);
-            color: #fff;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .navbar {
-            background: linear-gradient(90deg, #000, #0b0f2a);
-            border-bottom: 2px solid #45616a;
-        }
-
-        .navbar-brand {
-            color: #ffe81f !important;
-            letter-spacing: 2px;
-        }
-
-        .nav-link {
-            color: #ccc !important;
-            transition: 0.3s;
-        }
-
-        .nav-link:hover {
-            color: #00bfff !important;
-        }
-
-        .btn-light {
-            background-color: #ffe81f;
-            border: none;
-            color: #000;
-            font-weight: bold;
-        }
-
-        .btn-light:hover {
-            background-color: #ffd700;
-        }
-
-        .modal-content {
-            background-color: #020617;
-            border: 1px solid #00bfff;
-        }
-
-        .form-control {
-            background-color: #000;
-            border: 1px solid #00bfff;
-            color: #fff;
-        }
-
-        .form-control:focus {
-            border-color: #ffe81f;
-            box-shadow: 0 0 5px #ffe81f;
-        }
-
-        .btn-primary {
-            background: #00bfff;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background: #009acd;
-        }
-    </style>
 </head>
 <body>
+    <header>
+        <div class="logo">Star Wars Universe</div>
+        <nav>
+            <ul>
+                <li><a href="#personagens">Personagens</a></li>
+                <li><a href="#naves">Naves</a></li>
+                <li><a href="#planetas">Planetas</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container">
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Que a Força Esteja com Você</h1>
+            <p>Explore o universo de Star Wars: personagens, naves e planetas icônicos.</p>
+        </div>
+    </section>
 
-        <a href="#" class="navbar-brand">
-            STAR WARS
-        </a>
-
-        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrincipal">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarPrincipal">
-            <div class="navbar-nav ms-auto align-items-center">
-
-                <a href="#" class="nav-link">
-                    <i class="bi bi-stars"></i> Início
-                </a>
-
-                <button class="btn btn-light ms-3" data-bs-toggle="modal" data-bs-target="#modalContato">
-                    Transmitir Mensagem
-                </button>
-
+    <section id="personagens">
+        <h2>Personagens Famosos</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/9/9b/Luke_Skywalker.png" alt="Luke Skywalker">
+                <h3>Luke Skywalker</h3>
+                <p>O Jedi que trouxe esperança à galáxia.</p>
+            </div>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/7/76/Darth_Vader.jpg" alt="Darth Vader">
+                <h3>Darth Vader</h3>
+                <p>O Sith lendário que espalhou medo pelo império.</p>
+            </div>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/1/1b/Leia_Organa.png" alt="Leia Organa">
+                <h3>Leia Organa</h3>
+                <p>Líder da Aliança Rebelde e símbolo de coragem.</p>
             </div>
         </div>
-    </div>
-</nav>
+    </section>
 
-<!-- MODAL -->
-<div class="modal fade" id="modalContato" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <h5 class="modal-title">Canal de Comunicação</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+    <section id="naves">
+        <h2>Naves Icônicas</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/e/e3/Millennium_Falcon.png" alt="Millennium Falcon">
+                <h3>Millennium Falcon</h3>
+                <p>A nave mais rápida da galáxia, pilotada por Han Solo.</p>
             </div>
-
-            <div class="modal-body">
-                <form class="needs-validation" novalidate>
-
-                    <div class="mb-1">
-                        <label class="form-label">Nome Completo</label>
-                        <input type="text" class="form-control" required>
-                        <div class="invalid-feedback">
-                            Informe seu nome.
-                        </div>
-                    </div>
-
-                    <div class="mb-2">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" required>
-                        <div class="invalid-feedback">
-                            Informe um e-mail válido.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Mensagem</label>
-                        <textarea class="form-control" rows="3" required></textarea>
-                        <div class="invalid-feedback">
-                            Escreva uma mensagem.
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary w-100">
-                        Enviar para a central
-                    </button>
-
-                </form>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/33/X-wing_T-65.png" alt="X-Wing">
+                <h3>X-Wing</h3>
+                <p>Nave de combate dos rebeldes, versátil e potente.</p>
             </div>
-
         </div>
-    </div>
-</div>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <section id="planetas">
+        <h2>Planetas</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/Tatooine_TPM.png" alt="Tatooine">
+                <h3>Tatooine</h3>
+                <p>Planeta desértico, lar de Luke Skywalker.</p>
+            </div>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/7/7b/Coruscant_EP3.png" alt="Coruscant">
+                <h3>Coruscant</h3>
+                <p>Capital da galáxia, cheia de arranha-céus e senadores.</p>
+            </div>
+        </div>
+    </section>
 
-    <script>
-    (() => {
-    'use strict';
-    const forms = document.querySelectorAll('.needs-validation');
-
-    forms.forEach(form => {
-        form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-        });
-
-    });
-
-});
-</script>
-
+    <footer>
+        <p>© 2026 Universo Star Wars - Fã Site</p>
+    </footer>
 </body>
 </html>
