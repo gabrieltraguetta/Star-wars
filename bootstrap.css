@@ -1,0 +1,74 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+    background: radial-gradient(circle, #000000, #020617, #000000);
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, #000000, #0b0f2a);
+    border-bottom: 2px solid #2f0096;
+}
+
+.navbar-brand {
+    color: #ffe81f !important;
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    color: #cccccc !important;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #00bfff !important;
+}
+
+/* Botões */
+.btn-light {
+    background-color: #ffe81f;
+    border: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+.btn-light:hover {
+    background-color: #ffd700;
+}
+
+.btn-primary {
+    background: #00bfff;
+    border: none;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #1f9a00; /* corrigido para azul */
+}
+
+/* Modal */
+.modal-content {
+    background-color: #020617;
+    border: 1px solid #00bfff;
+}
+
+/* Formulários */
+.form-control {
+    background-color: #000000;
+    border: 1px solid #00bfff;
+    color: #ffffff;
+}
+
+.form-control:focus {
+    border-color: #ffe81f;
+    box-shadow: 0 0 5px #ffe81f;
+    outline: none;
+}
