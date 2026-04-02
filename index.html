@@ -33,44 +33,38 @@
 
     <section id="personagens">
         <h2>Personagens Famosos</h2>
-        <div class="carousel-container">
-            <div class="carousel">
-                <button class="prev">&#10094;</button>
-                <div class="carousel-track-container">
-                    <div class="carousel-track">
-                        <div class="card">
-                            <img src="images.jpg" alt="Luke Skywalker">
-                            <h3>Luke Skywalker</h3>
-                            <p>Protagonista da trilogia original de Star Wars (1977-1983), um icônico cavaleiro Jedi.</p>
-                        </div>
-                        <div class="card">
-                            <img src="download.jpg" alt="Darth Vader">
-                            <h3>Darth Vader</h3>
-                            <p>É um icônico Lorde Sith e o principal antagonista da trilogia original de Star Wars.</p>
-                        </div>
-                        <div class="card">
-                            <img src="leia.jpg" alt="Leia Organa">
-                            <h3>Leia Organa</h3>
-                            <p>Princesa de Alderaan, senadora e líder da Resistência.</p>
-                        </div>
-                        <div class="card">
-                            <img src="yoda.jpg" alt="Yoda">
-                            <h3>Yoda</h3>
-                            <p>Mestre Jedi lendário, conhecido por sua sabedoria e conexão com a Força.</p>
-                        </div>
-                        <div class="card">
-                            <img src="R2-D2.jpg" alt="R2-D2">
-                            <h3>R2-D2</h3>
-                            <p>Droide astromecânico icônico, conhecido por sua inteligência e lealdade.</p>
-                        </div>
-                        <div class="card">
-                            <img src="chewbacca.jpg" alt="Chewbacca">
-                            <h3>Chewbacca</h3>
-                            <p>Wookiee guerreiro de Kashyyyk, fiel copiloto da Millennium Falcon.</p>
-                        </div>
-                    </div>
+        <div class="carousel">
+            <input type="radio" name="carousel" id="s1" checked>
+            <input type="radio" name="carousel" id="s2">
+            <input type="radio" name="carousel" id="s3">
+            
+            <div class="slides">
+                <div class="slide">
+                    <div class="card"><img src="https://via.placeholder.com/300x250/333/ffe81f?text=Luke" alt="Luke"><h3>Luke Skywalker</h3><p>Cavaleiro Jedi</p></div>
+                    <div class="card"><img src="https://via.placeholder.com/300x250/333/ffe81f?text=Vader" alt="Vader"><h3>Darth Vader</h3><p>Lorde Sith</p></div>
+                    <div class="card"><img src="https://via.placeholder.com/300x250/333/ffe81f?text=Leia" alt="Leia"><h3>Leia Organa</h3><p>Princesa</p></div>
                 </div>
-                <button class="next">&#10095;</button>
+                <div class="slide">
+                    <div class="card"><img src="https://via.placeholder.com/300x250/333/ffe81f?text=Yoda" alt="Yoda"><h3>Yoda</h3><p>Mestre Jedi</p></div>
+                    <div class="card"><img src="https://via.placeholder.com/300x250/333/ffe81f?text=R2-D2" alt="R2-D2"><h3>R2-D2</h3><p>Droide</p></div>
+                    <div class="card"><img src="https://via.placeholder.com/300x250/333/ffe81f?text=Chewie" alt="Chewie"><h3>Chewbacca</h3><p>Wookiee</p></div>
+                </div>
+                <div class="slide">
+                    <div class="card"><img src="https://via.placeholder.com/300x250/333/ffe81f?text=Han" alt="Han"><h3>Han Solo</h3><p>Piloto</p></div>
+                    <div class="card"><img src="https://via.placeholder.com/300x250/333/ffe81f?text=Obi-Wan" alt="Obi-Wan"><h3>Obi-Wan</h3><p>Mestre Jedi</p></div>
+                    <div class="card"><img src="https://via.placeholder.com/300x250/333/ffe81f?text=Palpatine" alt="Palpatine"><h3>Palpatine</h3><p>Imperador</p></div>
+                </div>
+            </div>
+            
+            <div class="nav">
+                <label for="s1" class="dot"></label>
+                <label for="s2" class="dot"></label>
+                <label for="s3" class="dot"></label>
+            </div>
+            
+            <div class="buttons">
+                <label for="s1" class="prev">&#10094;</label>
+                <label for="s3" class="next">&#10095;</label>
             </div>
         </div>
     </section>
@@ -78,39 +72,23 @@
     <section id="naves">
         <h2>Naves Icônicas</h2>
         <div class="cards">
-            <div class="card">
-                <img src="Millenium Falcon.png" alt="Millennium Falcon">
-                <h3>Millennium Falcon</h3>
-                <p>A nave mais rápida da galáxia, pilotada por Han Solo.</p>
-            </div>
-            <div class="card">
-                <img src="x-wing.png" alt="X-Wing">
-                <h3>X-Wing</h3>
-                <p>Nave de combate dos rebeldes, versátil e potente.</p>
-            </div>
+            <div class="card"><img src="https://via.placeholder.com/300x200/333/ffe81f?text=Falcon" alt="Falcon"><h3>Millennium Falcon</h3><p>A nave mais rápida</p></div>
+            <div class="card"><img src="https://via.placeholder.com/300x200/333/ffe81f?text=X-Wing" alt="X-Wing"><h3>X-Wing</h3><p>Nave rebelde</p></div>
+            <div class="card"><img src="https://via.placeholder.com/300x200/333/ffe81f?text=TIE" alt="TIE"><h3>TIE Fighter</h3><p>Nave imperial</p></div>
         </div>
     </section>
 
     <section id="planetas">
         <h2>Planetas</h2>
         <div class="cards">
-            <div class="card">
-                <img src="tatooine.jpg" alt="Tatooine">
-                <h3>Tatooine</h3>
-                <p>Planeta desértico, lar de Luke Skywalker.</p>
-            </div>
-            <div class="card">
-                <img src="coruscant.jpg" alt="Coruscant">
-                <h3>Coruscant</h3>
-                <p>Capital da galáxia, cheia de arranha-céus e senadores.</p>
-            </div>
+            <div class="card"><img src="https://via.placeholder.com/300x200/333/ffe81f?text=Tatooine" alt="Tatooine"><h3>Tatooine</h3><p>Planeta desértico</p></div>
+            <div class="card"><img src="https://via.placeholder.com/300x200/333/ffe81f?text=Coruscant" alt="Coruscant"><h3>Coruscant</h3><p>Capital da galáxia</p></div>
+            <div class="card"><img src="https://via.placeholder.com/300x200/333/ffe81f?text=Hoth" alt="Hoth"><h3>Hoth</h3><p>Planeta gelado</p></div>
         </div>
     </section>
 
     <footer>
         <p>2026 Universo Star Wars - Página de Fã</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
