@@ -8,6 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Entrada clássica Star Wars -->
+    <div id="starwars-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg" alt="Star Wars Logo">
+    </div>
+
     <header>
         <div class="logo">Star Wars Universe</div>
         <nav>
@@ -26,49 +31,50 @@
         </div>
     </section>
 
-    <!-- Seção de Personagens com Carrossel -->
     <section id="personagens">
         <h2>Personagens Famosos</h2>
-        <div class="carousel">
-            <button class="prev">&#10094;</button>
-            <div class="carousel-track">
-                <div class="card">
-                    <img src="images.jpg" alt="Luke Skywalker">
-                    <h3>Luke Skywalker</h3>
-                    <p>protagonista da trilogia original de Star Wars (1977-1983), um icônico cavaleiro Jedi que ascende de fazendeiro em Tatooine a herói da galáxia.</p>
+        <div class="carousel-container">
+            <div class="carousel">
+                <button class="prev">&#10094;</button>
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="card">
+                            <img src="images.jpg" alt="Luke Skywalker">
+                            <h3>Luke Skywalker</h3>
+                            <p>Protagonista da trilogia original de Star Wars (1977-1983), um icônico cavaleiro Jedi.</p>
+                        </div>
+                        <div class="card">
+                            <img src="download.jpg" alt="Darth Vader">
+                            <h3>Darth Vader</h3>
+                            <p>É um icônico Lorde Sith e o principal antagonista da trilogia original de Star Wars.</p>
+                        </div>
+                        <div class="card">
+                            <img src="leia.jpg" alt="Leia Organa">
+                            <h3>Leia Organa</h3>
+                            <p>Princesa de Alderaan, senadora e líder da Resistência.</p>
+                        </div>
+                        <div class="card">
+                            <img src="yoda.jpg" alt="Yoda">
+                            <h3>Yoda</h3>
+                            <p>Mestre Jedi lendário, conhecido por sua sabedoria e conexão com a Força.</p>
+                        </div>
+                        <div class="card">
+                            <img src="R2-D2.jpg" alt="R2-D2">
+                            <h3>R2-D2</h3>
+                            <p>Droide astromecânico icônico, conhecido por sua inteligência e lealdade.</p>
+                        </div>
+                        <div class="card">
+                            <img src="chewbacca.jpg" alt="Chewbacca">
+                            <h3>Chewbacca</h3>
+                            <p>Wookiee guerreiro de Kashyyyk, fiel copiloto da Millennium Falcon.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="download.jpg" alt="Darth Vader">
-                    <h3>Darth Vader</h3>
-                    <p>É um icônico Lorde Sith e o principal antagonista da trilogia original de Star Wars. </p>
-                </div>
-                <div class="card">
-                    <img src="Carrie_Fisher_como_Princesa_Leia.jpg" alt="Leia Organa">
-                    <h3>Leia Organa</h3>
-                    <p>Ela é a Princesa de Alderaan, senadora, líder da Aliança Rebelde e general da Resistência.</p>
-                </div>
-                <div class="card">
-                    <img src="yoda.jpg" alt="Yoda">
-                    <h3>Yoda</h3>
-                    <p>É um lendário Mestre Jedi de uma espécie misteriosa em Star Wars, conhecido por sua sabedoria, baixa estatura (76 cm) e conexão profunda com a Força.</p>
-                </div>
-                <div class="card">
-                    <img src="R2-D2.jpg" alt="Yoda">
-                    <h3>Yoda</h3>
-                    <p>É um icônico droide astromecânico da saga Star Wars, conhecido por sua bravura, inteligência e lealdade.</p>
-                </div>
-                <div class="card">
-                    <img src="chewbacca.jpg" alt="Yoda">
-                    <h3>Yoda</h3>
-                    <p>É um lendário guerreiro Wookiee de Kashyyyk e o fiel copiloto de Han Solo na nave Millennium Falcon na franquia Star Wars.</p>
-                </div>
-                
+                <button class="next">&#10095;</button>
             </div>
-            <button class="next">&#10095;</button>
         </div>
     </section>
 
-    <!-- Seção de Naves -->
     <section id="naves">
         <h2>Naves Icônicas</h2>
         <div class="cards">
@@ -85,7 +91,6 @@
         </div>
     </section>
 
-    <!-- Seção de Planetas -->
     <section id="planetas">
         <h2>Planetas</h2>
         <div class="cards">
@@ -103,40 +108,9 @@
     </section>
 
     <footer>
-        <p>© 2026 Universo Star Wars - Fã Site</p>
+        <p>2026 Universo Star Wars - Página de Fã</p>
     </footer>
 
-    <!-- JavaScript para Carrossel -->
-    <script>
-    const track = document.querySelector('.carousel-track');
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    const cards = Array.from(track.children);
-    let currentIndex = 0;
-
-    function updateCarousel() {
-        const cardWidth = cards[0].getBoundingClientRect().width + 20;
-        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    }
-
-    // Botões de navegação
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex === 0) ? cards.length - 1 : currentIndex - 1;
-        updateCarousel();
-    });
-
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
-        updateCarousel();
-    });
-
-    // Carrossel automático a cada 4 segundos
-    setInterval(() => {
-        currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
-        updateCarousel();
-    }, 4000);
-
-    window.addEventListener('resize', updateCarousel);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
