@@ -26,53 +26,76 @@
         </div>
     </section>
 
+    <!-- Seção de Personagens com Carrossel -->
     <section id="personagens">
         <h2>Personagens Famosos</h2>
-        <div class="cards">
-            <div class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/en/9/9b/Luke_Skywalker.png" alt="Luke Skywalker">
-                <h3>Luke Skywalker</h3>
-                <p>O Jedi que trouxe esperança à galáxia.</p>
+        <div class="carousel">
+            <button class="prev">&#10094;</button>
+            <div class="carousel-track">
+                <div class="card">
+                    <img src="images.jpg" alt="Luke Skywalker">
+                    <h3>Luke Skywalker</h3>
+                    <p>protagonista da trilogia original de Star Wars (1977-1983), um icônico cavaleiro Jedi que ascende de fazendeiro em Tatooine a herói da galáxia.</p>
+                </div>
+                <div class="card">
+                    <img src="download.jpg" alt="Darth Vader">
+                    <h3>Darth Vader</h3>
+                    <p>É um icônico Lorde Sith e o principal antagonista da trilogia original de Star Wars. </p>
+                </div>
+                <div class="card">
+                    <img src="Carrie_Fisher_como_Princesa_Leia.jpg" alt="Leia Organa">
+                    <h3>Leia Organa</h3>
+                    <p>Ela é a Princesa de Alderaan, senadora, líder da Aliança Rebelde e general da Resistência.</p>
+                </div>
+                <div class="card">
+                    <img src="yoda.jpg" alt="Yoda">
+                    <h3>Yoda</h3>
+                    <p>É um lendário Mestre Jedi de uma espécie misteriosa em Star Wars, conhecido por sua sabedoria, baixa estatura (76 cm) e conexão profunda com a Força.</p>
+                </div>
+                <div class="card">
+                    <img src="R2-D2.jpg" alt="Yoda">
+                    <h3>Yoda</h3>
+                    <p>É um icônico droide astromecânico da saga Star Wars, conhecido por sua bravura, inteligência e lealdade.</p>
+                </div>
+                <div class="card">
+                    <img src="chewbacca.jpg" alt="Yoda">
+                    <h3>Yoda</h3>
+                    <p>É um lendário guerreiro Wookiee de Kashyyyk e o fiel copiloto de Han Solo na nave Millennium Falcon na franquia Star Wars.</p>
+                </div>
+                
             </div>
-            <div class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/en/7/76/Darth_Vader.jpg" alt="Darth Vader">
-                <h3>Darth Vader</h3>
-                <p>O Sith lendário que espalhou medo pelo império.</p>
-            </div>
-            <div class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/en/1/1b/Leia_Organa.png" alt="Leia Organa">
-                <h3>Leia Organa</h3>
-                <p>Líder da Aliança Rebelde e símbolo de coragem.</p>
-            </div>
+            <button class="next">&#10095;</button>
         </div>
     </section>
 
+    <!-- Seção de Naves -->
     <section id="naves">
         <h2>Naves Icônicas</h2>
         <div class="cards">
             <div class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/en/e/e3/Millennium_Falcon.png" alt="Millennium Falcon">
+                <img src="Millenium Falcon.png" alt="Millennium Falcon">
                 <h3>Millennium Falcon</h3>
                 <p>A nave mais rápida da galáxia, pilotada por Han Solo.</p>
             </div>
             <div class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/en/3/33/X-wing_T-65.png" alt="X-Wing">
+                <img src="x-wing.png" alt="X-Wing">
                 <h3>X-Wing</h3>
                 <p>Nave de combate dos rebeldes, versátil e potente.</p>
             </div>
         </div>
     </section>
 
+    <!-- Seção de Planetas -->
     <section id="planetas">
         <h2>Planetas</h2>
         <div class="cards">
             <div class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/Tatooine_TPM.png" alt="Tatooine">
+                <img src="tatooine.jpg" alt="Tatooine">
                 <h3>Tatooine</h3>
                 <p>Planeta desértico, lar de Luke Skywalker.</p>
             </div>
             <div class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/en/7/7b/Coruscant_EP3.png" alt="Coruscant">
+                <img src="coruscant.jpg" alt="Coruscant">
                 <h3>Coruscant</h3>
                 <p>Capital da galáxia, cheia de arranha-céus e senadores.</p>
             </div>
@@ -82,5 +105,38 @@
     <footer>
         <p>© 2026 Universo Star Wars - Fã Site</p>
     </footer>
+
+    <!-- JavaScript para Carrossel -->
+    <script>
+    const track = document.querySelector('.carousel-track');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const cards = Array.from(track.children);
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const cardWidth = cards[0].getBoundingClientRect().width + 20;
+        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    }
+
+    // Botões de navegação
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? cards.length - 1 : currentIndex - 1;
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
+        updateCarousel();
+    });
+
+    // Carrossel automático a cada 4 segundos
+    setInterval(() => {
+        currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
+        updateCarousel();
+    }, 4000);
+
+    window.addEventListener('resize', updateCarousel);
+    </script>
 </body>
 </html>
