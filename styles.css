@@ -5,14 +5,17 @@
   box-sizing: border-box;
 }
 
+/* BODY */
 body {
-  background: rgb(90, 90, 90);
+  background: #000; /* fallback */
   font-family: 'Orbitron', sans-serif;
-  overflow: hidden;
   color: white;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* FUNDO ANIMADO */
+/* FUNDO ANIMADO DE ESTRELAS */
 .space {
   position: fixed;
   width: 100%;
@@ -25,45 +28,50 @@ body {
 }
 
 @keyframes moveStars {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(-500px, -500px);
-  }
+  from { transform: translate(0, 0); }
+  to { transform: translate(-500px, -500px); }
 }
 
-/* LAYOUT */
+/* CONTAINER */
 .container {
-  height: 100vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  gap: 60px;
+  gap: 40px;
+  padding: 50px 20px;
+  z-index: 1;
+  position: relative;
 }
 
-/* CARD */
-.card {
+/* CARD PADRÃO */
+.card, .card-wrapper {
   text-align: center;
-  transition: 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 
-/* CÍRCULO */
-.circle {
-  width: 245px;
-  height: 245px;
+/* CARD DE NAVES */
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.card-wrapper .circle {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   border: 2px solid rgba(255,255,255,0.2);
   display: flex;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(5px);
-  transition: 0.4s;
   position: relative;
+  transition: 0.4s;
 }
 
-/* GLOW */
-.circle::before {
+.card-wrapper .circle::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -74,14 +82,12 @@ body {
   transition: 0.4s;
 }
 
-/* IMAGEM */
-.circle img {
-  width: 175px;
+.card-wrapper .circle img {
+  width: 100px;
   transition: 0.6s;
 }
 
-/* TEXTO */
-.card span {
+.card-wrapper span {
   display: block;
   margin-top: 15px;
   font-size: 13px;
@@ -89,26 +95,110 @@ body {
   color: #aaa;
 }
 
-/* HOVER EFFECT */
-.card:hover .circle {
+.card-wrapper:hover .circle {
   border-color: white;
   transform: scale(1.1);
 }
 
-.card:hover .circle::before {
+.card-wrapper:hover .circle::before {
   opacity: 1;
-  box-shadow: 0 0 25px rgb(216, 202, 0);
+  box-shadow: 25px rgb(216, 202, 0);
 }
 
-.card:hover img {
+.card-wrapper:hover img {
   transform: rotate(10deg) scale(1.1);
 }
 
-.card:hover span {
+.card-wrapper:hover span {
   color: white;
 }
 
-.card {
-  text-decoration: none;
-  color: inherit;
+/* BOTÃO SAIBA MAIS */
+.btn-saiba {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.3);
+  color: #ccc;
+  padding: 8px 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.btn-saiba:hover {
+  border-color: rgb(216, 202, 0);
+  color: rgb(216, 202, 0);
+}
+
+/* CARD DE PERSONAGENS */
+.card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: 0.3s;
+  font-family: Arial, sans-serif;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.card:hover img {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(0, 0, 255, 0);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #1a1a2e;
+  border: 2px solid rgb(216, 202, 0);
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  padding: 25px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-header h2 {
+  color: rgb(216, 202, 0);
+}
+
+.close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: rgb(216, 202, 0);
 }
