@@ -7,96 +7,133 @@
 </head>
 <body>
 
+  <!-- CONTAINER DE PERSONAGENS (AGORA VEM PRIMEIRO) -->
+  <div class="container">
 
-<div class="space"></div>
-
-<div class="container">
-
-  <!-- CARD 1 -->
-  <div class="card-wrapper">
-    <a href="https://pt.wikipedia.org/wiki/X-wing" class="card">
-      <div class="circle">
-        <img src="x-wing (1).png">
-      </div>
-      <span>X-WING</span>
-    </a>
-    <button class="btn-saiba" onclick="abrirModal('X-WING', 'Caça da Aliança Rebelde, usado por Luke Skywalker.')">SAIBA MAIS</button>
-  </div>
-
-  <!-- CARD 2 -->
-  <div class="card-wrapper">
-    <a href="https://pt.wikipedia.org/wiki/Millennium_Falcon" class="card">
-      <div class="circle">
-        <img src="_CLASSIC Millennium Falcon Pic!.png">
-      </div>
-      <span>MILLENNIUM FALCON</span>
-    </a>
-    <button class="btn-saiba" onclick="abrirModal('MILLENNIUM FALCON', 'A nave mais rápida da galáxia, pilotada por Han Solo.')">SAIBA MAIS</button>
-  </div>
-
-  <!-- CARD 3 -->
-  <div class="card-wrapper">
-    <a href="https://pt.wikipedia.org/wiki/TIE_Fighter" class="card">
-      <div class="circle">
-        <img src="tie.png">
-      </div>
-      <span>TIE FIGHTER</span>
-    </a>
-    <button class="btn-saiba" onclick="abrirModal('TIE FIGHTER', 'Caça do Império Galáctico, rápido e mortal.')">SAIBA MAIS</button>
-  </div>
-
-  <!-- CARD 4 -->
-  <div class="card-wrapper">
-    <a href="https://pt.wikipedia.org/wiki/Estrela_da_Morte" class="card">
-      <div class="circle">
-        <img src="Death star sphere.png">
-      </div>
-      <span>ESTRELA DA MORTE</span>
-    </a>
-    <button class="btn-saiba" onclick="abrirModal('ESTRELA DA MORTE', 'Estação espacial do Império capaz de destruir planetas.')">SAIBA MAIS</button>
-  </div>
-
-</div>
-
-<!-- MODAL -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 id="modalTitulo">Título</h2>
-      <button class="close" onclick="fecharModal()">&times;</button>
+    <div class="card">
+      <img src="darth.jpg" alt="Darth Vader">
+      <p>DARTH VADER</p>
     </div>
-    <div class="modal-body">
-      <p id="modalTexto">Texto do modal</p>
+
+    <div class="card">
+      <img src="han solo.jpg" alt="Han Solo">
+      <p>HAN SOLO</p>
+    </div>
+
+    <div class="card">
+      <img src="skywalker.jpg" alt="Luke Skywalker">
+      <p>LUKE SKYWALKER</p>
+    </div>
+
+    <div class="card">
+      <img src="leia.jpg" alt="Leia">
+      <p>LEIA</p>
+    </div>
+
+    <div class="card">
+      <img src="chewbacca.jpg" alt="Chewbacca">
+      <p>CHEWBACCA</p>
+    </div>
+
+    <div class="card">
+      <img src="R2-D2.jpg" alt="R2-D2">
+      <p>R2-D2</p>
+    </div>
+
+    <div class="card">
+      <img src="yoda.jpg" alt="Yoda">
+      <p>YODA</p>
+    </div>
+
+  </div>
+
+  <!-- CONTAINER DE NAVES (AGORA VEM DEPOIS) -->
+  <div class="container">
+
+    <!-- CARD 1 - X-WING -->
+    <div class="card-wrapper">
+      <a href="https://pt.wikipedia.org/wiki/X-wing" class="card">
+        <div class="circle">
+          <img src="x-wing (1).png" alt="X-Wing">
+        </div>
+        <span>X-WING</span>
+      </a>
+      <button class="btn-saiba" onclick="abrirModal('X-WING', 'Caça da Aliança Rebelde, usado por Luke Skywalker.')">SAIBA MAIS</button>
+    </div>
+
+    <!-- CARD 2 - MILLENNIUM FALCON -->
+    <div class="card-wrapper">
+      <a href="https://pt.wikipedia.org/wiki/Millennium_Falcon" class="card">
+        <div class="circle">
+          <img src="_CLASSIC Millennium Falcon Pic!.png" alt="Millennium Falcon">
+        </div>
+        <span>MILLENNIUM FALCON</span>
+      </a>
+      <button class="btn-saiba" onclick="abrirModal('MILLENNIUM FALCON', 'A nave mais rápida da galáxia, pilotada por Han Solo.')">SAIBA MAIS</button>
+    </div>
+
+    <!-- CARD 3 - TIE FIGHTER -->
+    <div class="card-wrapper">
+      <a href="https://pt.wikipedia.org/wiki/TIE_Fighter" class="card">
+        <div class="circle">
+          <img src="tie.png" alt="TIE Fighter">
+        </div>
+        <span>TIE FIGHTER</span>
+      </a>
+      <button class="btn-saiba" onclick="abrirModal('TIE FIGHTER', 'Caça do Império Galáctico, rápido e mortal.')">SAIBA MAIS</button>
+    </div>
+
+    <!-- CARD 4 - ESTRELA DA MORTE -->
+    <div class="card-wrapper">
+      <a href="https://pt.wikipedia.org/wiki/Estrela_da_Morte" class="card">
+        <div class="circle">
+          <img src="Death star sphere.png" alt="Estrela da Morte">
+        </div>
+        <span>ESTRELA DA MORTE</span>
+      </a>
+      <button class="btn-saiba" onclick="abrirModal('ESTRELA DA MORTE', 'Estação espacial do Império capaz de destruir planetas.')">SAIBA MAIS</button>
+    </div>
+
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitulo">Título</h2>
+        <button class="close" onclick="fecharModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p id="modalTexto">Texto do modal</p>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  function abrirModal(titulo, texto) {
-    document.getElementById('modalTitulo').innerText = titulo;
-    document.getElementById('modalTexto').innerText = texto;
-    document.getElementById('modal').style.display = 'flex';
-  }
-
-  function fecharModal() {
-    document.getElementById('modal').style.display = 'none';
-  }
-
-  // Fechar ao clicar fora
-  window.onclick = function(e) {
-    let modal = document.getElementById('modal');
-    if (e.target == modal) {
-      modal.style.display = 'none';
+  <!-- SCRIPTS -->
+  <script>
+    function abrirModal(titulo, texto) {
+      document.getElementById('modalTitulo').innerText = titulo;
+      document.getElementById('modalTexto').innerText = texto;
+      document.getElementById('modal').style.display = 'flex';
     }
-  }
 
-  // Fechar com ESC
-  document.onkeydown = function(e) {
-    if (e.key === 'Escape') {
-      fecharModal();
+    function fecharModal() {
+      document.getElementById('modal').style.display = 'none';
     }
-  }
-</script>
+
+    window.onclick = function(e) {
+      let modal = document.getElementById('modal');
+      if (e.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    document.onkeydown = function(e) {
+      if (e.key === 'Escape') {
+        fecharModal();
+      }
+    }
+  </script>
 
 </body>
 </html>
